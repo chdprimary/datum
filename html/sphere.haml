@@ -1,0 +1,73 @@
+!!!
+%html(itemscope itemtype="http://schema.org/CreativeWork")
+  %head
+    %meta(charset="UTF-8")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+    %meta(itemprop="name" content="Datum")
+    %title Datum | Data Visualization Effort
+    %script(src="//code.jquery.com/jquery-1.11.0.min.js")
+    %link(href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet")
+    %script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
+    %link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
+    / %link(href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css')
+    %link(href="../stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css")
+    %link(href="../stylesheets/print.css" media="print" rel="stylesheet" type="text/css")
+    %script(src="../slider/js/bootstrap-slider.js")
+  %body(id="top")
+    :javascript
+      $(document).ready(function () {
+        $('#sphere-angle-slider').slider()
+          .on('slide', function (event) {
+            $('.sphere').css('transform','rotateY('+event['value']+'deg)');
+          });
+        $('sphere-borderradius-slider').slider()
+          .on('slide', function (event) {
+            console.log(event['value']);
+            
+          });
+        $('#sphere-solid-checkbox').click(function () {
+          if($(this).is(':checked')) {
+            $('.ring').removeClass('ring-solid');
+            $('.ring').addClass('ring-dashed');
+          } else {
+            $('.ring').removeClass('ring-dashed');
+            $('.ring').addClass('ring-solid');
+          }
+        });
+      });
+    %header(class="navbar navbar-default datum-navbar" role="banner")
+      %div(class="container")
+        %div(class="navbar-header")
+          / %a(href="#top") %img(class="navbar-brand" src="Brand.png")
+          %a(href="index.html" class="navbar-brand datum-brand")Datum
+        %nav(class="collapse navbar-collapse" role="navigation")
+          %ul(class="nav navbar-nav")
+            %li
+              %a(href="#top")Sphere
+            %li
+              %a(href="SolidStateElectronics.html")Solid State
+            %li
+              %a(href="Item3.php")Item 3
+          %ul(class="nav navbar-nav navbar-right")
+            %li
+              %a About
+            %li
+              %a Contact
+    %section(class="datum-exhibit")
+      %div(class="body")
+        %div(class="row")
+          %div(class="col-md-8 datum-display")
+            - @n = 16
+            .sphere
+              - @n.times do
+                .ring
+          %div(class="col-md-4 datum-description")
+            %h2 Header Text
+            %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.
+            %h4 Dashed?
+            %input(type="checkbox" id="sphere-solid-checkbox" class="datum-checkbox")
+            %h4 Angle: 
+            %div(class="well datum-slider-well")
+              %input(type="text" id="sphere-angle-slider" class="datum-slider" value="" data-slider-min="0" data-slider-max="180" data-slider-step="1" data-slider-value="45" data-slider-orientation="horiztonal")
+            %h4 Border Radius:
+              %input(type="text" id="sphere-borderradius-slider" class="datum-slider" value="" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="50" data-slider-orientation="horiztonal")

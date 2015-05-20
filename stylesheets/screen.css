@@ -1,0 +1,492 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 11, ../sass/screen.sass */
+.datum-brand {
+  font-family: "Century Gothic", sans-serif;
+}
+
+/* line 14, ../sass/screen.sass */
+.datum-footer {
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+}
+
+/* line 19, ../sass/screen.sass */
+.datum-navbar {
+  margin-bottom: 0px;
+}
+
+/* line 22, ../sass/screen.sass */
+.codepen-link {
+  float: right;
+}
+
+/* line 25, ../sass/screen.sass */
+.datum-display {
+  height: 463px;
+}
+
+/* line 28, ../sass/screen.sass */
+.datum-description {
+  background-color: #333;
+  color: #ddd;
+  height: 463px;
+}
+
+/* line 33, ../sass/screen.sass */
+.datum-exhibit {
+  background-color: #eee;
+}
+
+/* line 36, ../sass/screen.sass */
+.well.datum-slider-well {
+  background-color: initial;
+  border: initial;
+  width: 50%;
+  padding: 3px;
+  margin: 0px;
+}
+
+/* line 43, ../sass/screen.sass */
+.checkbox.datum-checkbox {
+  position: initial;
+}
+
+/* line 72, ../sass/screen.sass */
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 76, ../sass/screen.sass */
+*:before, *:after {
+  content: "";
+}
+
+/* line 78, ../sass/screen.sass */
+html, body {
+  height: 100%;
+}
+
+/* line 80, ../sass/screen.sass */
+body {
+  position: relative;
+  background: #f7f7f7;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* line 85, ../sass/screen.sass */
+.sphere {
+  -webkit-transform: rotateY(45deg);
+  -moz-transform: rotateY(45deg);
+  -ms-transform: rotateY(45deg);
+  transform: rotateY(45deg);
+}
+/* line 86, ../sass/screen.sass */
+.sphere, .sphere *, .sphere *:before, .sphere *:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/* line 95, ../sass/screen.sass */
+.ring {
+  width: 15em;
+  height: 15em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 99, ../sass/screen.sass */
+.ring:before {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #272727 #272727 transparent transparent;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 105, ../sass/screen.sass */
+.ring.ring-dashed:before {
+  border-style: dashed;
+}
+/* line 108, ../sass/screen.sass */
+.ring.ring-solid:before {
+  border-style: solid;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(1) {
+  -webkit-transform: translateZ(-7.5em) scale(0.0);
+  -moz-transform: translateZ(-7.5em) scale(0.0);
+  -ms-transform: translateZ(-7.5em) scale(0.0);
+  transform: translateZ(-7.5em) scale(0.0);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(1):before {
+  -webkit-animation: ring 2s -0s linear infinite;
+  animation: ring 2s -0s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(2) {
+  -webkit-transform: translateZ(-7.35589em) scale(0.19509);
+  -moz-transform: translateZ(-7.35589em) scale(0.19509);
+  -ms-transform: translateZ(-7.35589em) scale(0.19509);
+  transform: translateZ(-7.35589em) scale(0.19509);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(2):before {
+  -webkit-animation: ring 2s -0.125s linear infinite;
+  animation: ring 2s -0.125s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(3) {
+  -webkit-transform: translateZ(-6.9291em) scale(0.38268);
+  -moz-transform: translateZ(-6.9291em) scale(0.38268);
+  -ms-transform: translateZ(-6.9291em) scale(0.38268);
+  transform: translateZ(-6.9291em) scale(0.38268);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(3):before {
+  -webkit-animation: ring 2s -0.25s linear infinite;
+  animation: ring 2s -0.25s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(4) {
+  -webkit-transform: translateZ(-6.23602em) scale(0.55557);
+  -moz-transform: translateZ(-6.23602em) scale(0.55557);
+  -ms-transform: translateZ(-6.23602em) scale(0.55557);
+  transform: translateZ(-6.23602em) scale(0.55557);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(4):before {
+  -webkit-animation: ring 2s -0.375s linear infinite;
+  animation: ring 2s -0.375s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(5) {
+  -webkit-transform: translateZ(-5.3033em) scale(0.70711);
+  -moz-transform: translateZ(-5.3033em) scale(0.70711);
+  -ms-transform: translateZ(-5.3033em) scale(0.70711);
+  transform: translateZ(-5.3033em) scale(0.70711);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(5):before {
+  -webkit-animation: ring 2s -0.5s linear infinite;
+  animation: ring 2s -0.5s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(6) {
+  -webkit-transform: translateZ(-4.16678em) scale(0.83147);
+  -moz-transform: translateZ(-4.16678em) scale(0.83147);
+  -ms-transform: translateZ(-4.16678em) scale(0.83147);
+  transform: translateZ(-4.16678em) scale(0.83147);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(6):before {
+  -webkit-animation: ring 2s -0.625s linear infinite;
+  animation: ring 2s -0.625s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(7) {
+  -webkit-transform: translateZ(-2.87013em) scale(0.92388);
+  -moz-transform: translateZ(-2.87013em) scale(0.92388);
+  -ms-transform: translateZ(-2.87013em) scale(0.92388);
+  transform: translateZ(-2.87013em) scale(0.92388);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(7):before {
+  -webkit-animation: ring 2s -0.75s linear infinite;
+  animation: ring 2s -0.75s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(8) {
+  -webkit-transform: translateZ(-1.46318em) scale(0.98079);
+  -moz-transform: translateZ(-1.46318em) scale(0.98079);
+  -ms-transform: translateZ(-1.46318em) scale(0.98079);
+  transform: translateZ(-1.46318em) scale(0.98079);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(8):before {
+  -webkit-animation: ring 2s -0.875s linear infinite;
+  animation: ring 2s -0.875s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(9) {
+  -webkit-transform: translateZ(0em) scale(1);
+  -moz-transform: translateZ(0em) scale(1);
+  -ms-transform: translateZ(0em) scale(1);
+  transform: translateZ(0em) scale(1);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(9):before {
+  -webkit-animation: ring 2s -1s linear infinite;
+  animation: ring 2s -1s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(10) {
+  -webkit-transform: translateZ(1.46318em) scale(0.98079);
+  -moz-transform: translateZ(1.46318em) scale(0.98079);
+  -ms-transform: translateZ(1.46318em) scale(0.98079);
+  transform: translateZ(1.46318em) scale(0.98079);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(10):before {
+  -webkit-animation: ring 2s -1.125s linear infinite;
+  animation: ring 2s -1.125s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(11) {
+  -webkit-transform: translateZ(2.87013em) scale(0.92388);
+  -moz-transform: translateZ(2.87013em) scale(0.92388);
+  -ms-transform: translateZ(2.87013em) scale(0.92388);
+  transform: translateZ(2.87013em) scale(0.92388);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(11):before {
+  -webkit-animation: ring 2s -1.25s linear infinite;
+  animation: ring 2s -1.25s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(12) {
+  -webkit-transform: translateZ(4.16678em) scale(0.83147);
+  -moz-transform: translateZ(4.16678em) scale(0.83147);
+  -ms-transform: translateZ(4.16678em) scale(0.83147);
+  transform: translateZ(4.16678em) scale(0.83147);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(12):before {
+  -webkit-animation: ring 2s -1.375s linear infinite;
+  animation: ring 2s -1.375s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(13) {
+  -webkit-transform: translateZ(5.3033em) scale(0.70711);
+  -moz-transform: translateZ(5.3033em) scale(0.70711);
+  -ms-transform: translateZ(5.3033em) scale(0.70711);
+  transform: translateZ(5.3033em) scale(0.70711);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(13):before {
+  -webkit-animation: ring 2s -1.5s linear infinite;
+  animation: ring 2s -1.5s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(14) {
+  -webkit-transform: translateZ(6.23602em) scale(0.55557);
+  -moz-transform: translateZ(6.23602em) scale(0.55557);
+  -ms-transform: translateZ(6.23602em) scale(0.55557);
+  transform: translateZ(6.23602em) scale(0.55557);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(14):before {
+  -webkit-animation: ring 2s -1.625s linear infinite;
+  animation: ring 2s -1.625s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(15) {
+  -webkit-transform: translateZ(6.9291em) scale(0.38268);
+  -moz-transform: translateZ(6.9291em) scale(0.38268);
+  -ms-transform: translateZ(6.9291em) scale(0.38268);
+  transform: translateZ(6.9291em) scale(0.38268);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(15):before {
+  -webkit-animation: ring 2s -1.75s linear infinite;
+  animation: ring 2s -1.75s linear infinite;
+}
+/* line 113, ../sass/screen.sass */
+.ring:nth-child(16) {
+  -webkit-transform: translateZ(7.35589em) scale(0.19509);
+  -moz-transform: translateZ(7.35589em) scale(0.19509);
+  -ms-transform: translateZ(7.35589em) scale(0.19509);
+  transform: translateZ(7.35589em) scale(0.19509);
+}
+/* line 115, ../sass/screen.sass */
+.ring:nth-child(16):before {
+  -webkit-animation: ring 2s -1.875s linear infinite;
+  animation: ring 2s -1.875s linear infinite;
+}
+
+@keyframes ring {
+  100% {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+}
+@-webkit-keyframes ring {
+  100% {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    -ms-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+}
+/* line 125, ../sass/screen.sass */
+.slider {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+/* line 129, ../sass/screen.sass */
+.slider.slider-horizontal {
+  width: 210px;
+  height: 20px;
+}
+/* line 132, ../sass/screen.sass */
+.slider.slider-horizontal .slider-track {
+  height: 10px;
+  width: 100%;
+  margin-top: -5px;
+  top: 50%;
+  left: 0;
+}
+/* line 138, ../sass/screen.sass */
+.slider.slider-horizontal .slider-selection {
+  height: 100%;
+  top: 0;
+  bottom: 0;
+}
+/* line 142, ../sass/screen.sass */
+.slider.slider-horizontal .slider-handle {
+  margin-left: -10px;
+  margin-top: -5px;
+}
+/* line 145, ../sass/screen.sass */
+.slider.slider-horizontal .slider-handle.triangle {
+  border-width: 0 10px 10px 10px;
+  width: 0;
+  height: 0;
+  border-bottom-color: #0480be;
+  margin-top: 0;
+}
+/* line 151, ../sass/screen.sass */
+.slider.slider-vertical {
+  height: 210px;
+  width: 20px;
+}
+/* line 154, ../sass/screen.sass */
+.slider.slider-vertical .slider-track {
+  width: 10px;
+  height: 100%;
+  margin-left: -5px;
+  left: 50%;
+  top: 0;
+}
+/* line 160, ../sass/screen.sass */
+.slider.slider-vertical .slider-selection {
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+/* line 165, ../sass/screen.sass */
+.slider.slider-vertical .slider-handle {
+  margin-left: -5px;
+  margin-top: -10px;
+}
+/* line 168, ../sass/screen.sass */
+.slider.slider-vertical .slider-handle.triangle {
+  border-width: 10px 0 10px 10px;
+  width: 1px;
+  height: 1px;
+  border-left-color: #0480be;
+  margin-left: 0;
+}
+/* line 174, ../sass/screen.sass */
+.slider input {
+  display: none;
+}
+/* line 176, ../sass/screen.sass */
+.slider .tooltip-inner {
+  white-space: nowrap;
+}
+
+/* line 179, ../sass/screen.sass */
+.slider-track {
+  position: absolute;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  background-image: -moz-linear-gradient(top, whitesmoke, #f9f9f9);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(whitesmoke), to(#f9f9f9));
+  background-image: -webkit-linear-gradient(top, whitesmoke, #f9f9f9);
+  background-image: -o-linear-gradient(top, whitesmoke, #f9f9f9);
+  background-image: linear-gradient(to bottom, whitesmoke, #f9f9f9);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#fff9f9f9', GradientType=0);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 197, ../sass/screen.sass */
+.slider-selection {
+  position: absolute;
+  background-color: #f7f7f7;
+  background-image: -moz-linear-gradient(top, #f9f9f9, whitesmoke);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(whitesmoke));
+  background-image: -webkit-linear-gradient(top, #f9f9f9, whitesmoke);
+  background-image: -o-linear-gradient(top, #f9f9f9, whitesmoke);
+  background-image: linear-gradient(to bottom, #f9f9f9, whitesmoke);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f9f9', endColorstr='#fff5f5f5', GradientType=0);
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 217, ../sass/screen.sass */
+.slider-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #0e90d2;
+  background-image: -moz-linear-gradient(top, #149bdf, #0480be);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#149bdf), to(#0480be));
+  background-image: -webkit-linear-gradient(top, #149bdf, #0480be);
+  background-image: -o-linear-gradient(top, #149bdf, #0480be);
+  background-image: linear-gradient(to bottom, #149bdf, #0480be);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff149bdf', endColorstr='#ff0480be', GradientType=0);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  opacity: 0.8;
+  border: 0px solid transparent;
+}
+/* line 234, ../sass/screen.sass */
+.slider-handle.round {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+/* line 238, ../sass/screen.sass */
+.slider-handle.triangle {
+  background: transparent none;
+}

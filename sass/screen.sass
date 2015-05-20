@@ -1,0 +1,239 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+$n: 16
+$r: 7.5em
+$t: 2s
+$ba: 180deg / $n
+
+.datum-brand
+  font-family: "Century Gothic", sans-serif
+  
+.datum-footer
+  position: relative
+  bottom: 0px
+  width: 100%
+
+.datum-navbar
+  margin-bottom: 0px
+
+.codepen-link
+  float: right
+
+.datum-display
+  height: 463px
+
+.datum-description
+  background-color: #333
+  color: #ddd
+  height: 463px
+
+.datum-exhibit
+  background-color: #eee
+  
+.well.datum-slider-well
+  background-color: initial
+  border: initial
+  width: 50%
+  padding: 3px
+  margin: 0px
+  
+.checkbox.datum-checkbox
+  position: initial
+
+// both @mixin and '=' define a mixin
+@mixin box-sizing($type)
+  -webkit-box-sizing: $type
+  -moz-box-sizing: $type
+  -ms-box-sizing: $type
+  box-sizing: $type
+
+=transform-style($input)
+  -webkit-transform-style: $input
+  -moz-transform-style: $input
+  -ms-transform-style: $input
+  transform-style: $input
+  
+@mixin transform($input)
+  -webkit-transform: $input
+  -moz-transform: $input
+  -ms-transform: $input
+  transform: $input
+  
+=border-radius ($input)
+  -webkit-border-radius: $input
+  -moz-border-radius: $input
+  -ms-border-radius: $input
+  border-radius: $input
+
+*
+  &, &:before, &:after
+    margin: 0
+    padding: 0
+    +box-sizing(border-box)
+  &:before, &:after
+    content: ''
+html, body
+  height: 100%
+body
+  position: relative
+  background: #f7f7f7
+  overflow-y: auto
+  overflow-x: hidden
+.sphere
+  &, *, *:before, *:after
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    margin: auto
+    +transform-style(preserve-3d)
+  +transform(rotateY(45deg))
+.ring
+  width: $r * 2
+  height: $r * 2
+  +border-radius(50%)
+  &:before
+    border: 
+      width: 1px
+      style: solid
+      color: #272727 #272727 transparent transparent
+    +border-radius(50%)
+  &.ring-dashed:before
+    border: 
+      style: dashed
+  &.ring-solid:before
+    border: 
+      style: solid
+  @for $i from 0 to $n
+    $ca: $i * $ba - 90deg
+    &:nth-child(#{$i + 1})
+      +transform(translateZ($r * sin($ca))scale(cos($ca)))
+      &:before
+        -webkit-animation: ring $t -#{($i / $n) * $t} linear infinite
+        animation: ring $t -#{($i / $n) * $t} linear infinite
+@keyframes ring
+  100%
+    +transform(rotateZ(360deg))
+@-webkit-keyframes ring
+  100%
+    +transform(rotateZ(360deg))
+
+.slider
+  display: inline-block
+  vertical-align: middle
+  position: relative
+  &.slider-horizontal
+    width: 210px
+    height: 20px
+    .slider-track
+      height: 10px
+      width: 100%
+      margin-top: -5px
+      top: 50%
+      left: 0
+    .slider-selection
+      height: 100%
+      top: 0
+      bottom: 0
+    .slider-handle
+      margin-left: -10px
+      margin-top: -5px
+      &.triangle
+        border-width: 0 10px 10px 10px
+        width: 0
+        height: 0
+        border-bottom-color: #0480be
+        margin-top: 0
+  &.slider-vertical
+    height: 210px
+    width: 20px
+    .slider-track
+      width: 10px
+      height: 100%
+      margin-left: -5px
+      left: 50%
+      top: 0
+    .slider-selection
+      width: 100%
+      left: 0
+      top: 0
+      bottom: 0
+    .slider-handle
+      margin-left: -5px
+      margin-top: -10px
+      &.triangle
+        border-width: 10px 0 10px 10px
+        width: 1px
+        height: 1px
+        border-left-color: #0480be
+        margin-left: 0
+  input
+    display: none
+  .tooltip-inner
+    white-space: nowrap
+
+.slider-track
+  position: absolute
+  cursor: pointer
+  background-color: #f7f7f7
+  background-image: -moz-linear-gradient(top, whitesmoke, #f9f9f9)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(whitesmoke), to(#f9f9f9))
+  background-image: -webkit-linear-gradient(top, whitesmoke, #f9f9f9)
+  background-image: -o-linear-gradient(top, whitesmoke, #f9f9f9)
+  background-image: linear-gradient(to bottom, whitesmoke, #f9f9f9)
+  background-repeat: repeat-x
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#fff9f9f9', GradientType=0)
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1)
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1)
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1)
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  border-radius: 4px
+
+.slider-selection
+  position: absolute
+  background-color: #f7f7f7
+  background-image: -moz-linear-gradient(top, #f9f9f9, whitesmoke)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(whitesmoke))
+  background-image: -webkit-linear-gradient(top, #f9f9f9, whitesmoke)
+  background-image: -o-linear-gradient(top, #f9f9f9, whitesmoke)
+  background-image: linear-gradient(to bottom, #f9f9f9, whitesmoke)
+  background-repeat: repeat-x
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f9f9', endColorstr='#fff5f5f5', GradientType=0)
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15)
+  -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15)
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15)
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  border-radius: 4px
+
+.slider-handle
+  position: absolute
+  width: 20px
+  height: 20px
+  background-color: #0e90d2
+  background-image: -moz-linear-gradient(top, #149bdf, #0480be)
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#149bdf), to(#0480be))
+  background-image: -webkit-linear-gradient(top, #149bdf, #0480be)
+  background-image: -o-linear-gradient(top, #149bdf, #0480be)
+  background-image: linear-gradient(to bottom, #149bdf, #0480be)
+  background-repeat: repeat-x
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff149bdf', endColorstr='#ff0480be', GradientType=0)
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)
+  opacity: 0.8
+  border: 0px solid transparent
+  &.round
+    -webkit-border-radius: 20px
+    -moz-border-radius: 20px
+    border-radius: 20px
+  &.triangle
+    background: transparent none

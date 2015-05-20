@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html itemscope itemtype='http://schema.org/CreativeWork'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'>
+    <meta content='Datum' itemprop='name'>
+    <title>Datum | Data Visualization Effort</title>
+    <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+    <link href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet'>
+    <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
+    <!-- %link(href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css') -->
+    <link href='../stylesheets/screen.css' media='screen, projection' rel='stylesheet' type='text/css'>
+    <link href='../stylesheets/print.css' media='print' rel='stylesheet' type='text/css'>
+    <script src='../slider/js/bootstrap-slider.js'></script>
+  </head>
+  <body id='top'>
+    
+    <script>
+      $(document).ready(function () {
+        $('.ring').hover(function () {
+          $(this).css('border-color','blue');
+        });
+        $('#sphere-angle-slider').slider()
+          .on('slide', function (event) {
+            console.log(event['value']);
+            $('.sphere').css('transform','rotateY('+event['value']+'deg)');
+          });
+        $('#sphere-solid-checkbox').click(function () {
+          if($(this).is(':checked')) {
+            $('.ring').removeClass('ring-solid');
+            $('.ring').addClass('ring-dashed');
+          } else {
+            $('.ring').removeClass('ring-dashed');
+            $('.ring').addClass('ring-solid');
+          }
+        });
+      });
+      
+      //Credit: Russell Uresti http://jsfiddle.net/russelluresti/RHhBz/2/
+      // search the CSSOM for a specific -webkit-keyframe rule
+      function findKeyframesRule(rule)
+      {
+          // gather all stylesheets into an array
+          var ss = document.styleSheets;
+          
+          // loop through the stylesheets
+          for (var i = 0; i < ss.length; ++i) {
+              
+              try {
+                // loop through all the rules
+                for (var j = 0; j < ss[i].cssRules.length; ++j) {
+                    // find the -webkit-keyframe rule whose name matches our passed over parameter and return that rule
+                    if (ss[i].cssRules[j].type == window.CSSRule.WEBKIT_KEYFRAMES_RULE && ss[i].cssRules[j].name == rule) {
+                        console.log('success doe ' + i + " " + j);    
+                        return ss[i].cssRules[j];
+                    }
+                } 
+              } catch(e) {
+                console.log(e);  
+              }
+          }
+          
+          // rule not found
+          return null;
+      }
+      
+      //remove old keyframes and add new ones
+      function change(percent)
+      {
+          // find our -webkit-keyframe rule
+          var keyframes = findKeyframesRule("ring");
+          
+          // remove the existing rule
+          for (var i = 0; i <= 100; ++i) {
+            keyframes.deleteRule(i + '%');
+          }
+          
+          // create new rule with number from slider
+          keyframes.insertRule(percent + "% { -webkit-transform: rotateZ(360deg); -moz-transform: rotateZ(360deg); -ms-transform: rotateZ(360deg); transform: rotateZ(360deg); }");
+          
+          // assign the animation to our element (which will cause the animation to run)
+          document.getElementsByClassName('.ring').style.webkitAnimationName = "ring";
+          
+          console.log(keyframes);
+      }
+      
+      // begin the new animation process
+      function startChange(percent)
+      {
+          // remove the old animation from our object
+          document.getElementById('sphere').style.webkitAnimationName = "none";
+          
+          // call the change method, which will update the keyframe animation
+          setTimeout(function(){change(percent);}, 0);
+      }
+      
+      //on slider change, alter the sphere's webkit-keyframe rule's animation-start percentage to slider value
+      $(function() {
+          $('#sphere-reset-slider').slider()
+          .on('slide', function (event) {
+            console.log('reset: ' + event['value']);
+            event.preventDefault();
+            startChange(event['value']);
+          });      
+      });
+    </script>
+    
+    <header class='navbar navbar-default datum-navbar' role='banner'>
+      <div class='container'>
+        <div class='navbar-header'>
+          <!-- %a(href="#top") %img(class="navbar-brand" src="Brand.png") -->
+          <a class='navbar-brand datum-brand' href='index.html'>Datum</a>
+        </div>
+        <nav class='collapse navbar-collapse' role='navigation'>
+          <ul class='nav navbar-nav'>
+            <li>
+              <a href='#top'>Sphere</a>
+            </li>
+            <li>
+              <a href='SolidStateElectronics.html'>Solid State</a>
+            </li>
+            <li>
+              <a href='Item3.php'>Item 3</a>
+            </li>
+          </ul>
+          <ul class='nav navbar-nav navbar-right'>
+            <li>
+              <a>About</a>
+            </li>
+            <li>
+              <a>Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <section class='datum-exhibit'>
+      <div class='body'>
+        <div class='row'>
+          <div class='col-md-8 datum-display'>
+            <div class='sphere' id="sphere">
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+              <div class='ring'></div>
+            </div>
+          </div>
+          <div class='col-md-4 datum-description'>
+            <h2>Header Text</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.</p>
+            <h4>Dashed?</h4>
+            <input class='datum-checkbox' id='sphere-solid-checkbox' type='checkbox'>
+            <h4>Angle:</h4>
+            <div class='well datum-slider-well'>
+              <input class='datum-slider' data-slider-max='180' data-slider-min='0' data-slider-orientation='horiztonal' data-slider-step='1' data-slider-value='45' id='sphere-angle-slider' type='text' value=''>
+            </div>
+            <h4>Reset Animation at X% Completion</h4>
+            <div class='well datum-slider-well'>
+              <input class='datum-slider' data-slider-max='100' data-slider-min='0' data-slider-orientation='horiztonal' data-slider-step='5' data-slider-value='100' id='sphere-reset-slider' type='text' value=''>
+            </div>
+          </div>
+          <div>
+            <pre>
+  n: 16
+  $r: 7.5em
+  $t: 2s
+  $ba: 180deg / $n
+  *
+    &, &:before, &:after
+      margin: 0
+      padding: 0
+      +box-sizing(border-box)
+    &:before, &:after
+      content: ''
+  html, body
+    height: 100%
+  body
+    position: relative
+    background: #f7f7f7
+    overflow: hidden
+  .sphere
+    &, *, *:before, *:after
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      margin: auto
+      +transform-style(preserve-3d)
+    +transform(rotateY(45deg))
+  .ring
+    width: $r * 2
+    height: $r * 2
+    +border-radius(50%)
+    &:before
+      border: 
+        width: 1px
+        style: solid
+        color: #272727 #272727 transparent transparent
+      +border-radius(50%)
+    //for each ring
+    @for $i from 0 to $n
+      //ca spans from -90 @ i=0 to +90 @ i=16
+      $ca: $i * $ba - 90deg
+      &:nth-child(#{$i + 1})
+        //position in y axis, scale in x axis (i=0 and i=16 are both scale=0)
+        +transform(translateZ($r * sin($ca))scale(cos($ca)))
+        &:before
+          animation: ring $t -#{($i / $n) * $t} linear infinite
+  +keyframes(ring)
+    //rotate about z, restart animation when 50% through
+    50%
+      +transform(rotateZ(360deg))
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

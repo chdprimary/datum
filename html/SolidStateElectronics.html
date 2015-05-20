@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html itemscope itemtype='http://schema.org/CreativeWork'>
+  <head>
+    <meta charset='UTF-8'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport'>
+    <meta content='Datum' itemprop='name'>
+    <title>Datum | Data Visualization Effort</title>
+    <script src='//code.jquery.com/jquery-1.11.0.min.js'></script>
+    <link href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet'>
+    <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet'>
+    <!-- %link(href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css') -->
+    <link href='../stylesheets/screen.css' media='screen, projection' rel='stylesheet' type='text/css'>
+    <link href='../stylesheets/print.css' media='print' rel='stylesheet' type='text/css'>
+  </head>
+  <body id='top'>
+    <script>
+      $(document).ready(function () {
+        $('.ring').hover(function () {
+          $(this).css('border-color','blue');
+        });
+      });
+    </script>
+    <header class='navbar navbar-default datum-navbar' role='banner'>
+      <div class='container'>
+        <div class='navbar-header'>
+          <!-- %a(href="#top") %img(class="navbar-brand" src="Brand.png") -->
+          <a class='navbar-brand datum-brand' href='index.html'>Datum</a>
+        </div>
+        <nav class='collapse navbar-collapse' role='navigation'>
+          <ul class='nav navbar-nav'>
+            <li>
+              <a href='sphere.html'>Sphere</a>
+            </li>
+            <li>
+              <a href='SolidStateElectronics.html'>Solid State</a>
+            </li>
+            <li>
+              <a href='#top'>Item 3</a>
+            </li>
+          </ul>
+          <ul class='nav navbar-nav navbar-right'>
+            <li>
+              <a>About</a>
+            </li>
+            <li>
+              <a>Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class='datum-exhibit'>
+      <div class='body'>
+        <div class='row'>
+          <div class='container datum-display'>
+            <h1 style="font-family: 'Century Gothic', sans-serif">Schrodinger's Wave Equation</h1>
+            <p>Schrodinger's Wave Equation is a second-order linear differential equation that is useful for describing the motion of electrons through a crystal structure. Here's what we know:</p>
+            <ul>
+              <li>The wave equation parallels the well-known equivalence of total energy to the sum of kinetic and potential energy (TE = KE + PE).</li>
+              <li>This also holds true for a given field described by the wave function &psi;(x,t). Therefore, TE&psi; = KE&psi; + PE&psi;.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
